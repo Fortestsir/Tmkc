@@ -82,7 +82,6 @@ Admin will approve your plan shortly."""
         text,
         parse_mode="Markdown"
     )
-    )
 
 @bot.message_handler(commands=["approve"])
 def approve_user(msg):
