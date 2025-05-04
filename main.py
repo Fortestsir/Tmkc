@@ -69,16 +69,19 @@ bot.send_message(msg.chat.id, f"""Scan result:
 {result[:4000]}""")
 
 @bot.message_handler(commands=["buypro"])
+def buy_pro(msg):
+    text = """**Pro Plan – ₹99/month**
+
+Pay via UPI:
+`uchitraxop@fam`
+
+After payment, send screenshot to @WebScan_Probot.
+Admin will approve your plan shortly."""
+    bot.send_message(
         msg.chat.id,
         text,
         parse_mode="Markdown"
     )
-        msg.chat.id,
-        "**Pro Plan – ₹99/month**\n\n"
-        "Pay via UPI:\n`uchitraxop@fam`\n\n"
-        "After payment, send screenshot to @WebScan_Probot.\n"
-        "Admin will approve your plan shortly.",
-        parse_mode="Markdown"
     )
 
 @bot.message_handler(commands=["approve"])
