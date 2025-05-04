@@ -64,8 +64,11 @@ def scan(msg):
     conn.commit()
     conn.close()
 
-    bot.send_message(msg.chat.id, f"Scan result:
+    bot.send_message(msg.chat.id, f"""Scan result:
 
+{result_text}
+
+✅ Scan completed.""")
 {result[:4000]}")
 
 @bot.message_handler(commands=["buypro"])
